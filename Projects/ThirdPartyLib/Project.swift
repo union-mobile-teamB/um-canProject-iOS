@@ -14,5 +14,6 @@ let project = Project.makeModule(
     targets: [.dynamicFramework],
     externalDependencies: [
         .SPM.Moya,
+        .SPM.Swinject
     ]
 )
