@@ -17,6 +17,7 @@ public extension TargetDependency {
 
 public extension TargetDependency.SPM {
     static let Moya = TargetDependency.external(name: "Moya")
+    static let Swinject = TargetDependency.external(name: "Swinject")
 }
 
 public extension TargetDependency.XCFramework {

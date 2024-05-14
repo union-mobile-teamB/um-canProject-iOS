@@ -11,7 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.window = UIWindow(windowScene: windowScene)
         
-        window?.rootViewController = BaseViewController()
+        window?.rootViewController = StubViewController()
         window?.makeKeyAndVisible()
     }
 }
