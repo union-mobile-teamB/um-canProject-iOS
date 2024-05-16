@@ -23,7 +23,7 @@ protocol KeychainManageable {
 }
 
 ///Keychain API를 활용하는 클래스 매니저
-final class KeychainManager: KeychainManageable {
+public class KeychainManager: KeychainManageable {
     
     //MARK: - Singleton
     static let shared = KeychainManager()

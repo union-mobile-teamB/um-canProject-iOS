@@ -1,5 +1,5 @@
 //
-//  CanAPI.swift
+//  APIEndpoint.swift
 //  NetworkKit
 //
 //  Created by 이태권 on 5/14/24.
@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import Combine
 import Moya
 
-enum CanAPI {
+/// Moya를 활용한 Endpoint
+enum APIEndpoint {
     /// 요청 시 DTO가 필요 없을 경우
     case refreshToken
     
@@ -22,7 +22,7 @@ enum CanAPI {
 //    case CAN_CreateMultipart(model: Can_CreateRequestDTO)
 }
 
-extension CanAPI: TargetType {
+extension APIEndpoint: TargetType {
     
     /// 서버의 Base URL 설정
     var baseURL: URL {
@@ -106,9 +106,9 @@ extension CanAPI: TargetType {
         switch self {
         case .refreshToken:
             return [:]
-//        case .DTOCreateJSON:
+//        case .CAN_Create_JSON:
 //            return ["Content-Type": "application/json"]
-//        case .CAN_CreateMultipart:
+//        case .CAN_Create_Multipart:
 //            return ["Content-Type": "multipart/form-data"]
         }
     }

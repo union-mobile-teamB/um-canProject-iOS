@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import Moya
 
-final class RefreshInterceptor: RequestInterceptor {
+public class RefreshInterceptor: RequestInterceptor {
     
     //MARK: - Singleton
     static let shared = RefreshInterceptor()
@@ -28,13 +28,13 @@ final class RefreshInterceptor: RequestInterceptor {
     ) {
         
         /// **
-        /// 1) 문자열 "userID"로 키체인에 해당하는 실제 userID 조회
+        /// 1) "userID"로 키체인에 실제 userID 조회
         /// 2) "\(userID)accessToken"으로 키체인에 실제 access token 조회
         /// 3) "\(userID)refreshToken"으로 키체인에 실제 refresh token 조회
         ///
         /// Q. 1번은 왜 필요한지?
         /// A. 다른 유저가 기존의 토큰 사용에 대한 위험성 방지
-        /// 1번이 없을 경우, A 유저의 로그아웃 이후 B 유저가 로그인 할 시 B가 A의 Token으로 조회하게 된다.
+        /// 1번이 없을 경우, A 유저의 로그아웃 이후 B 유저가 로그인 할 시 B가 A의 Token으로 요청하게 된다.
         guard
             let userID = keychain.find(key: "", type: .userID),
             let accessToken = keychain.find(key: userID, type: .accessToken),
