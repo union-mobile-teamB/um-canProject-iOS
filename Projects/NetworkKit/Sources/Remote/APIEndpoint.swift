@@ -58,8 +58,10 @@ extension APIEndpoint: TargetType {
     
     public var task: Moya.Task {
         switch self {
+        /// 1) request model ==> X
         case .refreshToken:
             return .requestPlain
+        /// 2) request model ==> JSON
 //        case .userJoin(let data):
 //            return .requestJSONEncodable(data)
 //        case .userSignin(let data):
@@ -82,6 +84,8 @@ extension APIEndpoint: TargetType {
 //                    name: "content"
 //                )
 //            )
+//            return .uploadMultipart(multiFormData)
+        /// 3) request model ==> multipart
 //            multiFormData.append(
 //                MultipartFormData(
 //                    provider: .data(
