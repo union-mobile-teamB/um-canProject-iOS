@@ -16,7 +16,7 @@ import PackageDescription
 #endif
 
 let package = Package(
-    name: "EggtartPackage",
+    name: "UnMobile",
     dependencies: [
         .package(url: "https://github.com/Moya/Moya.git", exact: "15.0.3"),
         .package(url: "https://github.com/Swinject/Swinject.git", exact: "2.8.8")
