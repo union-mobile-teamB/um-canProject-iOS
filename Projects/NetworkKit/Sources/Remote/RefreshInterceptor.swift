@@ -21,7 +21,7 @@ public class RefreshInterceptor: RequestInterceptor {
     
     //MARK: - Protocol Methods
     /// 네트워크 요청 시 intercept 할 메서드
-    func adapt(
+    public func adapt(
         _ urlRequest: URLRequest,
         for session: Session,
         completion: @escaping (Result<URLRequest, Error>) -> Void
@@ -53,7 +53,7 @@ public class RefreshInterceptor: RequestInterceptor {
     }
     
     
-    func retry(
+    public func retry(
         _ request: Request,
         for session: Session,
         dueTo error: Error,

@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 /// Moya를 활용한 Endpoint
-enum APIEndpoint {
+public enum APIEndpoint {
     /// 요청 시 DTO가 필요 없을 경우
     case refreshToken
     
@@ -25,12 +25,12 @@ enum APIEndpoint {
 extension APIEndpoint: TargetType {
     
     /// 서버의 Base URL 설정
-    var baseURL: URL {
+    public var baseURL: URL {
         return URL(string: "https://can.project/api")! /// URL 설정하기
     }
     
     /// API Path 설정
-    var path: String {
+    public var path: String {
         switch self {
         case .refreshToken:
             return "refresh"
@@ -47,7 +47,7 @@ extension APIEndpoint: TargetType {
     }
     
     /// HTTP 메서드
-    var method: Moya.Method {
+    public var method: Moya.Method {
         switch self {
         case .refreshToken:
             return .get
@@ -56,7 +56,7 @@ extension APIEndpoint: TargetType {
         }
     }
     
-    var task: Moya.Task {
+    public var task: Moya.Task {
         switch self {
         case .refreshToken:
             return .requestPlain
@@ -95,7 +95,7 @@ extension APIEndpoint: TargetType {
     }
     
     // 서버에서 요청 시 헤더를 추가로 요청할 경우
-    var headers: [String : String]? {
+    public var headers: [String : String]? {
         /// 1) 헤더가 필요 없을 때
         ///     [:]
         /// 2) 서버의 설정에서 JSON 헤더를 넣어야 할 때
