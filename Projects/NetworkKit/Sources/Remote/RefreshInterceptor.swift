@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import Moya
 
+/// refresh 요청에 대한 인터셉터 ==> 네트워크 요청 시 먼저 요청
 public class RefreshInterceptor: RequestInterceptor {
     
     //MARK: - Singleton

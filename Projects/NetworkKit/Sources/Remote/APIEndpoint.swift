@@ -114,3 +114,9 @@ extension APIEndpoint: TargetType {
     }
 }
 
+extension APIEndpoint {
+    /// 허용할 response type
+    public var validationType: ValidationType {
+        return .successCodes // "2xx"의 응답코드만 response type으로 허용
+    }
+}
